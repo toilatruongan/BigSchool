@@ -4,15 +4,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace BigSchool.ViewModels
 {
-    public class FutureDate:ValidationAttribute
+    public class ValidTime:ValidationAttribute
     {
         public override bool IsValid(object value)
         {
             DateTime dateTime;
-            var isValid=DateTime.TryParseExact(Convert.ToString(value),
+            var isValid = DateTime.TryParseExact(Convert.ToString(value),
             "dd/M/yyyy",
             CultureInfo.CurrentCulture,
             DateTimeStyles.None,
